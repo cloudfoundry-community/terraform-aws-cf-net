@@ -37,8 +37,8 @@ the `offset` variable - they will always be X.X.0.0/24 and X.X.1.0/24 respective
 
 |    Name    |     CIDR  |
 --------------------------
-Bastion      | X.X.0.0/24
-Microbosh    | X.X.1.0/24
-Loadbalancer | X.X.x2.0/24
-Runtime 2a   | X.X.x3.0/24
-Runtime 2b   | X.X.x4.0/24
+|Bastion      | X.X.0.0/24|
+|Microbosh    | X.X.1.0/24|
+|Loadbalancer | X.X.x2.0/24|
+|Runtime 2a   | X.X.x3.0/24|
+|Runtime 2b   | X.X.x4.0/24|
