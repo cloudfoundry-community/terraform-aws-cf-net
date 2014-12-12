@@ -35,10 +35,10 @@ bastion subnet and bosh subnet per VPC - there is no need to have multiple, no
 matter how many Cloud Foundry instances you're running. As such, they do not take
 the `offset` variable - they will always be X.X.0.0/24 and X.X.1.0/24 respectively.
 
-|    Name    |     CIDR  |
---------------------------
-|Bastion      | X.X.0.0/24|
-|Microbosh    | X.X.1.0/24|
+|    Name     |     CIDR   |
+--------------|-------------
+|Bastion      | X.X.0.0/24 |
+|Microbosh    | X.X.1.0/24 |
 |Loadbalancer | X.X.x2.0/24|
 |Runtime 2a   | X.X.x3.0/24|
 |Runtime 2b   | X.X.x4.0/24|
