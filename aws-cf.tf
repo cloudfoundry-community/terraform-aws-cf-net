@@ -135,7 +135,7 @@ resource "aws_security_group" "cf" {
 	}
 
 	tags {
-		Name = "cf"
+		Name = "cf-${var.offset}-${var.aws_vpc_id}"
 	}
 
 }
