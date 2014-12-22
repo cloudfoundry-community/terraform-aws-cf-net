@@ -2,12 +2,11 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "aws_key_path" {}
 variable "aws_key_name" {}
+
 variable "aws_region" {
   default = "us-west-2"
 }
-variable "aws_nat_ami" {
-  default = "ami-1d2b2958"
-}
+
 variable "network" {
   default = "10.10"
 }
@@ -47,18 +46,5 @@ variable "aws_centos_ami" {
         ap-southeast-2 = "ami-89e88db3"
         eu-west-1 = "ami-af6faad8"
         sa-east-1 = "ami-73ee416e"
-    }
-}
-
-variable "aws_nat_ami" {
-    default = {
-        us-east-1 = "ami-4c9e4b24"
-        us-west-1 = "ami-1d2b2958"
-        us-west-2 = "ami-8b6912bb"
-        ap-northeast-1 = "ami-49c29e48"
-        ap-southeast-1 = "ami-d482da86"
-        ap-southeast-2 = "ami-a164029b"
-        eu-west-1 = "ami-5b60b02c"
-        sa-east-1 = "ami-8b72db96"
     }
 }
