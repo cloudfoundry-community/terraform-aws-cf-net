@@ -1,7 +1,10 @@
 # terraform-aws-cf-net
 
-This is part of a project aims to create one click deploy for Cloud Foundry on AWS VPC.
-You *probably* don't want to use this repo directly.
+NOTE: If you are looking to deploy Cloud Foundry into AWS VPC, visit https://github.com/cloudfoundry-community/terraform-aws-cf-install.
+
+This repository is a submodule of the project above aims to create one click deploy for Cloud Foundry on AWS VPC. You *probably* don't want to use this repo directly.
+
+This terraform module creates a VPC, a set of public/private subnets and a NAT for outbound traffic.
 
 ## Architecture
 We use https://github.com/cloudfoundry-community/terraform-aws-vpc to create the
