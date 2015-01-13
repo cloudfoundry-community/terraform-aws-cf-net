@@ -70,6 +70,23 @@ output "aws_subnet_cfruntime-2b_availability_zone" {
   value = "${aws_subnet.cfruntime-2b.availability_zone}"
 }
 
+resource "aws_subnet" "docker" {
+	vpc_id = "${var.aws_vpc_id}"
+	cidr_block = "${var.network}.${var.offset}5.0/24"
+	availability_zone = "${aws_subnet.lb.availability_zone}"
+	tags {
+		Name = "docker"
+	}
+}
+
+output "aws_subnet_docker_id" {
+  value = "${aws_subnet.docker.id}"
+}
+
+output "aws_subnet_docker_availability_zone" {
+  value = "${aws_subnet.docker.availability_zone}"
+}
+
 # Routing table for private subnets
 
 resource "aws_route_table_association" "cfruntime-2a-private" {
@@ -79,6 +96,11 @@ resource "aws_route_table_association" "cfruntime-2a-private" {
 
 resource "aws_route_table_association" "cfruntime-2b-private" {
 	subnet_id = "${aws_subnet.cfruntime-2b.id}"
+	route_table_id = "${var.aws_route_table_private_id}"
+}
+
+resource "aws_route_table_association" "docker" {
+	subnet_id = "${aws_subnet.docker.id}"
 	route_table_id = "${var.aws_route_table_private_id}"
 }
 

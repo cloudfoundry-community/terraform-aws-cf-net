@@ -43,3 +43,4 @@ Subnets created take the form of the `network` variable (for example, 10.10), ap
 | Loadbalancer | X.X.x2.0/24 | terraform-aws-cf-net |
 | Runtime 2a   | X.X.x3.0/24 | terraform-aws-cf-net |
 | Runtime 2b   | X.X.x4.0/24 | terraform-aws-cf-net |
+| Docker       | X.X.x5.0/24 | terraform-aws-cf-net |
