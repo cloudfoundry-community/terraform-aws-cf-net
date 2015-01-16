@@ -19,6 +19,10 @@ output "aws_subnet_lb_id" {
   value = "${aws_subnet.lb.id}"
 }
 
+output "aws_subnet_lb_availability_zone" {
+  value = "${aws_subnet.lb.availability_zone}"
+}
+
 # Routing table for public subnets
 
 resource "aws_route_table" "public" {
