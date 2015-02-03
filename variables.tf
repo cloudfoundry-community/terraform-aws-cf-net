@@ -22,6 +22,12 @@ variable "aws_route_table_private_id" {}
 variable "aws_subnet_lb_availability_zone" {
   default = "us-west-2a"
 }
+variable "aws_subnet_cfruntime-2a_availability_zone" {
+  default = "us-west-2a"
+}
+variable "aws_subnet_cfruntime-2b_availability_zone" {
+  default = "us-west-2a"
+}
 
 variable "aws_ubuntu_ami" {
     default = {

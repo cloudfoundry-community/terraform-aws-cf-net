@@ -44,6 +44,7 @@ resource "aws_route_table_association" "lb-public" {
 resource "aws_subnet" "cfruntime-2a" {
 	vpc_id = "${var.aws_vpc_id}"
 	cidr_block = "${var.network}.${var.offset}3.0/24"
+	availability_zone = "${var.aws_subnet_cfruntime-2a_availability_zone}"
 	tags {
 		Name = "cf1"
 	}
@@ -60,7 +61,7 @@ output "aws_subnet_cfruntime-2a_availability_zone" {
 resource "aws_subnet" "cfruntime-2b" {
 	vpc_id = "${var.aws_vpc_id}"
 	cidr_block = "${var.network}.${var.offset}4.0/24"
-	availability_zone = "${aws_subnet.lb.availability_zone}"
+	availability_zone = "${var.aws_subnet_cfruntime-2b_availability_zone}"
 	tags {
 		Name = "cf2"
 	}
