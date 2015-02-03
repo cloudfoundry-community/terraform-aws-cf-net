@@ -1,0 +1,136 @@
+Refreshing Terraform state prior to plan...
+
+
+The Terraform execution plan has been generated and is shown below.
+Resources are shown in alphabetical order for quick scanning. Green resources
+will be created (or destroyed and then created if an existing resource
+exists), yellow resources are being changed in-place, and red resources
+will be destroyed.
+
+Note: You didn't specify an "-out" parameter to save this plan, so when
+"apply" is called, Terraform can't guarantee this is what will execute.
+
+[32m+ aws_eip.cf
+[0m    allocation_id:  "" => "<computed>"
+    association_id: "" => "<computed>"
+    domain:         "" => "<computed>"
+    private_ip:     "" => "<computed>"
+    public_ip:      "" => "<computed>"
+    vpc:            "" => "1"
+[0m
+[0m[32m+ aws_route_table.public
+[0m    route.#:                      "" => "1"
+    route.3901018052.cidr_block:  "" => "0.0.0.0/0"
+    route.3901018052.gateway_id:  "" => "X"
+    route.3901018052.instance_id: "" => ""
+    tags.#:                       "" => "<computed>"
+    vpc_id:                       "" => "X"
+[0m
+[0m[32m+ aws_route_table_association.cfruntime-2a-private
+[0m    route_table_id: "" => "X"
+    subnet_id:      "" => "${aws_subnet.cfruntime-2a.id}"
+[0m
+[0m[32m+ aws_route_table_association.cfruntime-2b-private
+[0m    route_table_id: "" => "X"
+    subnet_id:      "" => "${aws_subnet.cfruntime-2b.id}"
+[0m
+[0m[32m+ aws_route_table_association.docker
+[0m    route_table_id: "" => "X"
+    subnet_id:      "" => "${aws_subnet.docker.id}"
+[0m
+[0m[32m+ aws_route_table_association.lb-public
+[0m    route_table_id: "" => "X"
+    subnet_id:      "" => "${aws_subnet.lb.id}"
+[0m
+[0m[32m+ aws_security_group.cf
+[0m    description:                          "" => "CF security groups"
+    ingress.#:                            "" => "8"
+    ingress.1325011704.cidr_blocks.#:     "" => "1"
+    ingress.1325011704.cidr_blocks.0:     "" => "0.0.0.0/0"
+    ingress.1325011704.from_port:         "" => "4443"
+    ingress.1325011704.protocol:          "" => "tcp"
+    ingress.1325011704.security_groups.#: "" => "0"
+    ingress.1325011704.self:              "" => "0"
+    ingress.1325011704.to_port:           "" => "4443"
+    ingress.1663094005.cidr_blocks.#:     "" => "0"
+    ingress.1663094005.from_port:         "" => "0"
+    ingress.1663094005.protocol:          "" => "udp"
+    ingress.1663094005.security_groups.#: "" => "0"
+    ingress.1663094005.self:              "" => "1"
+    ingress.1663094005.to_port:           "" => "65535"
+    ingress.219953956.cidr_blocks.#:      "" => "1"
+    ingress.219953956.cidr_blocks.0:      "" => "0.0.0.0/0"
+    ingress.219953956.from_port:          "" => "22"
+    ingress.219953956.protocol:           "" => "tcp"
+    ingress.219953956.security_groups.#:  "" => "0"
+    ingress.219953956.self:               "" => "0"
+    ingress.219953956.to_port:            "" => "22"
+    ingress.2261450965.cidr_blocks.#:     "" => "1"
+    ingress.2261450965.cidr_blocks.0:     "" => "0.0.0.0/0"
+    ingress.2261450965.from_port:         "" => "4222"
+    ingress.2261450965.protocol:          "" => "tcp"
+    ingress.2261450965.security_groups.#: "" => "0"
+    ingress.2261450965.self:              "" => "0"
+    ingress.2261450965.to_port:           "" => "25777"
+    ingress.2603706321.cidr_blocks.#:     "" => "1"
+    ingress.2603706321.cidr_blocks.0:     "" => "0.0.0.0/0"
+    ingress.2603706321.from_port:         "" => "80"
+    ingress.2603706321.protocol:          "" => "tcp"
+    ingress.2603706321.security_groups.#: "" => "0"
+    ingress.2603706321.self:              "" => "0"
+    ingress.2603706321.to_port:           "" => "80"
+    ingress.32090245.cidr_blocks.#:       "" => "1"
+    ingress.32090245.cidr_blocks.0:       "" => "0.0.0.0/0"
+    ingress.32090245.from_port:           "" => "-1"
+    ingress.32090245.protocol:            "" => "icmp"
+    ingress.32090245.security_groups.#:   "" => "0"
+    ingress.32090245.self:                "" => "0"
+    ingress.32090245.to_port:             "" => "-1"
+    ingress.3738418453.cidr_blocks.#:     "" => "0"
+    ingress.3738418453.from_port:         "" => "0"
+    ingress.3738418453.protocol:          "" => "tcp"
+    ingress.3738418453.security_groups.#: "" => "0"
+    ingress.3738418453.self:              "" => "1"
+    ingress.3738418453.to_port:           "" => "65535"
+    ingress.4089093546.cidr_blocks.#:     "" => "1"
+    ingress.4089093546.cidr_blocks.0:     "" => "0.0.0.0/0"
+    ingress.4089093546.from_port:         "" => "443"
+    ingress.4089093546.protocol:          "" => "tcp"
+    ingress.4089093546.security_groups.#: "" => "0"
+    ingress.4089093546.self:              "" => "0"
+    ingress.4089093546.to_port:           "" => "443"
+    name:                                 "" => "cf-0-X"
+    owner_id:                             "" => "<computed>"
+    tags.#:                               "" => "1"
+    tags.Name:                            "" => "cf-0-X"
+    vpc_id:                               "" => "X"
+[0m
+[0m[32m+ aws_subnet.cfruntime-2a
+[0m    availability_zone: "" => "<computed>"
+    cidr_block:        "" => "10.10.03.0/24"
+    tags.#:            "" => "1"
+    tags.Name:         "" => "cf1"
+    vpc_id:            "" => "X"
+[0m
+[0m[32m+ aws_subnet.cfruntime-2b
+[0m    availability_zone: "" => "us-west-2a"
+    cidr_block:        "" => "10.10.04.0/24"
+    tags.#:            "" => "1"
+    tags.Name:         "" => "cf2"
+    vpc_id:            "" => "X"
+[0m
+[0m[32m+ aws_subnet.docker
+[0m    availability_zone: "" => "us-west-2a"
+    cidr_block:        "" => "10.10.05.0/24"
+    tags.#:            "" => "1"
+    tags.Name:         "" => "docker"
+    vpc_id:            "" => "X"
+[0m
+[0m[32m+ aws_subnet.lb
+[0m    availability_zone: "" => "us-west-2a"
+    cidr_block:        "" => "10.10.02.0/24"
+    tags.#:            "" => "1"
+    tags.Name:         "" => "lb"
+    vpc_id:            "" => "X"
+[0m
+[0m
