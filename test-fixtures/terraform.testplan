@@ -106,7 +106,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
     vpc_id:                               "" => "X"
 [0m
 [0m[32m+ aws_subnet.cfruntime-2a
-[0m    availability_zone: "" => "<computed>"
+[0m    availability_zone: "" => "us-west-2a"
     cidr_block:        "" => "10.10.03.0/24"
     tags.#:            "" => "1"
     tags.Name:         "" => "cf1"
