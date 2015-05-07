@@ -180,6 +180,10 @@ output "aws_security_group_cf_name" {
   value = "${aws_security_group.cf.name}"
 }
 
+output "aws_security_group_cf_id" {
+  value = "${aws_security_group.cf.id}"
+}
+
 resource "aws_eip" "cf" {
 	vpc = true
 }
