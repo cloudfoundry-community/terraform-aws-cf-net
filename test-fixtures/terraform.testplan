@@ -11,22 +11,20 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 "apply" is called, Terraform can't guarantee this is what will execute.
 
 [32m+ aws_eip.cf
-[0m    allocation_id:     "" => "<computed>"
-    association_id:    "" => "<computed>"
-    domain:            "" => "<computed>"
-    network_interface: "" => "<computed>"
-    private_ip:        "" => "<computed>"
-    public_ip:         "" => "<computed>"
-    vpc:               "" => "1"
+[0m    allocation_id:  "" => "<computed>"
+    association_id: "" => "<computed>"
+    domain:         "" => "<computed>"
+    private_ip:     "" => "<computed>"
+    public_ip:      "" => "<computed>"
+    vpc:            "" => "1"
 [0m
 [0m[32m+ aws_route_table.public
-[0m    route.#:                                    "" => "1"
-    route.2153853322.cidr_block:                "" => "0.0.0.0/0"
-    route.2153853322.gateway_id:                "" => "X"
-    route.2153853322.instance_id:               "" => ""
-    route.2153853322.network_interface_id:      "" => ""
-    route.2153853322.vpc_peering_connection_id: "" => ""
-    vpc_id:                                     "" => "X"
+[0m    route.#:                                   "" => "1"
+    route.188494238.cidr_block:                "" => "0.0.0.0/0"
+    route.188494238.gateway_id:                "" => "X"
+    route.188494238.instance_id:               "" => ""
+    route.188494238.vpc_peering_connection_id: "" => ""
+    vpc_id:                                    "" => "X"
 [0m
 [0m[32m+ aws_route_table_association.cfruntime-2a-private
 [0m    route_table_id: "" => "X"
@@ -46,7 +44,14 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m
 [0m[32m+ aws_security_group.cf
 [0m    description:                          "" => "CF security groups"
-    egress.#:                             "" => "<computed>"
+    egress.#:                             "" => "1"
+    egress.532441254.cidr_blocks.#:       "" => "1"
+    egress.532441254.cidr_blocks.0:       "" => "0.0.0.0/0"
+    egress.532441254.from_port:           "" => "0"
+    egress.532441254.protocol:            "" => "-1"
+    egress.532441254.security_groups.#:   "" => "0"
+    egress.532441254.self:                "" => "0"
+    egress.532441254.to_port:             "" => "65535"
     ingress.#:                            "" => "8"
     ingress.1799340084.cidr_blocks.#:     "" => "1"
     ingress.1799340084.cidr_blocks.0:     "" => "0.0.0.0/0"
@@ -111,7 +116,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m[32m+ aws_subnet.cfruntime-2a
 [0m    availability_zone:       "" => "us-west-2a"
     cidr_block:              "" => "10.10.03.0/24"
-    map_public_ip_on_launch: "" => "0"
+    map_public_ip_on_launch: "" => "<computed>"
     tags.#:                  "" => "1"
     tags.Name:               "" => "cf1"
     vpc_id:                  "" => "X"
@@ -119,7 +124,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m[32m+ aws_subnet.cfruntime-2b
 [0m    availability_zone:       "" => "us-west-2a"
     cidr_block:              "" => "10.10.04.0/24"
-    map_public_ip_on_launch: "" => "0"
+    map_public_ip_on_launch: "" => "<computed>"
     tags.#:                  "" => "1"
     tags.Name:               "" => "cf2"
     vpc_id:                  "" => "X"
@@ -127,7 +132,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m[32m+ aws_subnet.docker
 [0m    availability_zone:       "" => "us-west-2a"
     cidr_block:              "" => "10.10.05.0/24"
-    map_public_ip_on_launch: "" => "0"
+    map_public_ip_on_launch: "" => "<computed>"
     tags.#:                  "" => "1"
     tags.Name:               "" => "docker"
     vpc_id:                  "" => "X"
@@ -135,7 +140,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m[32m+ aws_subnet.lb
 [0m    availability_zone:       "" => "us-west-2a"
     cidr_block:              "" => "10.10.02.0/24"
-    map_public_ip_on_launch: "" => "0"
+    map_public_ip_on_launch: "" => "<computed>"
     tags.#:                  "" => "1"
     tags.Name:               "" => "lb"
     vpc_id:                  "" => "X"

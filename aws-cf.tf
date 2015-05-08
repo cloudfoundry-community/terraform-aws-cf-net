@@ -170,6 +170,13 @@ resource "aws_security_group" "cf" {
 		self = "true"
 	}
 
+	egress {
+		from_port = 0
+		to_port = 65535
+		protocol = "-1"
+		cidr_blocks = ["0.0.0.0/0"]
+	}
+
 	tags {
 		Name = "cf-${var.offset}-${var.aws_vpc_id}"
 	}
