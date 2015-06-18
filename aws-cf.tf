@@ -198,3 +198,16 @@ resource "aws_eip" "cf" {
 output "aws_eip_cf_public_ip" {
   value = "${aws_eip.cf.public_ip}"
 }
+
+output "aws_cf_a_cidr" {
+  value = "${aws_subnet.cfruntime-2a.cidr_block}"
+}
+output "aws_cf_b_cidr" {
+  value = "${aws_subnet.cfruntime-2b.cidr_block}"
+}
+output "aws_lb_cidr" {
+  value = "${aws_subnet.lb.cidr_block}"
+}
+output "aws_docker_cidr" {
+  value = "${aws_subnet.docker.cidr_block}"
+}
