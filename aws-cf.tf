@@ -92,6 +92,23 @@ output "aws_subnet_docker_availability_zone" {
   value = "${aws_subnet.docker.availability_zone}"
 }
 
+resource "aws_subnet" "logsearch" {
+	vpc_id = "${var.aws_vpc_id}"
+	cidr_block = "${var.network}.${var.offset}7.0/24"
+	availability_zone = "${aws_subnet.lb.availability_zone}"
+	tags {
+		Name = "logsearch"
+	}
+}
+
+output "aws_subnet_logsearch_id" {
+	value = "${aws_subnet.logsearch.id}"
+}
+
+output "aws_subnet_logsearch_availability_zone" {
+	value = "${aws_subnet.logsearch.availability_zone}"
+}
+
 # Routing table for private subnets
 
 resource "aws_route_table_association" "cfruntime-2a-private" {
@@ -106,6 +123,11 @@ resource "aws_route_table_association" "cfruntime-2b-private" {
 
 resource "aws_route_table_association" "docker" {
 	subnet_id = "${aws_subnet.docker.id}"
+	route_table_id = "${var.aws_route_table_private_id}"
+}
+
+resource "aws_route_table_association" "logsearch" {
+	subnet_id = "${aws_subnet.logsearch.id}"
 	route_table_id = "${var.aws_route_table_private_id}"
 }
 
@@ -210,4 +232,7 @@ output "aws_lb_cidr" {
 }
 output "aws_docker_cidr" {
   value = "${aws_subnet.docker.cidr_block}"
+}
+output "aws_logsearch_cidr" {
+  value = "${aws_subnet.logsearch.cidr_block}"
 }

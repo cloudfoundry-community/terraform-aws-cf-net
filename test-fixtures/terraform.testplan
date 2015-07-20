@@ -44,6 +44,10 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m    route_table_id: "" => "X"
     subnet_id:      "" => "${aws_subnet.lb.id}"
 [0m
+[0m[32m+ aws_route_table_association.logsearch
+[0m    route_table_id: "" => "X"
+    subnet_id:      "" => "${aws_subnet.logsearch.id}"
+[0m
 [0m[32m+ aws_security_group.cf
 [0m    description:                          "" => "CF security groups"
     egress.#:                             "" => "1"
@@ -145,6 +149,14 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
     map_public_ip_on_launch: "" => "0"
     tags.#:                  "" => "1"
     tags.Name:               "" => "lb"
+    vpc_id:                  "" => "X"
+[0m
+[0m[32m+ aws_subnet.logsearch
+[0m    availability_zone:       "" => "us-west-2a"
+    cidr_block:              "" => "10.10.07.0/24"
+    map_public_ip_on_launch: "" => "0"
+    tags.#:                  "" => "1"
+    tags.Name:               "" => "logsearch"
     vpc_id:                  "" => "X"
 [0m
 [0m
