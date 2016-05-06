@@ -4,7 +4,3 @@ before_install:
   -O /tmp/terraform.zip
 - sudo unzip -d /usr/local/bin/ /tmp/terraform.zip
 script: make test
-env:
-  global:
-  - secure: PP4gidLUq+6LCCykRu+CFUu4ed/FYbqJ1JVUDnd99jPiPJMvBS18CFLh5zu+edrL7rRmOJVGDIBbtbRzxXQk4jtYcAMlRaC8xjpBeHQ7Q7uN9LV+oMjptkt9QuH8D/jdjyRv5Eo/lIQFT386dqYN+PiowxoM1XL7i//5rp0H+Kc=
-  - secure: Nznz/tdKVWH8zkFX+veQ4RUonfpU4mWErrND7Ce9lqDeVnwMuVb/u8RVlTF523d5uOHRv0L1XdFP3TaMkRqOwocRU3oHuOZW/wDlqu0ONBFS0kjJvrIkibe6Ju/+j9RJMSUXQgDz1wQC8ZtuZoXAoSZgN3xsa/fym8Ze7+VbFVI=
