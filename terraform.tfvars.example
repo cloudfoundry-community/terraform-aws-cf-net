@@ -1,5 +1,5 @@
-aws_access_key = "F2j8zeb+vFAsHRZPArBIml12JOariFRXrGge88b2UpU0J128/No4VBvPyVSAEedjDOml/a8dE4ZKtZP09MRYk9a23a/t1TbW+IvYf3Ia0jvwBgbUtt8/TFd6n1aUHpP/+Oc/PlhklzHOGfm6ZT5F2lmyFrfvAcxnl3Ru+xghHGY="
-aws_secret_key = "euK9xBIMpCnD5r/5V76EJI2lCk5EbGhyUhFKFHOnMzXPSIEUbo7i7DW5oAJu5F0T/ynlhX68VUpUFJEz2QGs7CnqtOvHzl8763UFNisTbzCB7qXXQHIbLPKR+9lpxmeydL7o+3C5YIWk7hhRfQyxKaeLiWpXzOKCsJn8kT8EQY4="
+aws_access_key = "${AWS_ACCESS_KEY}"
+aws_secret_key = "${AWS_SECRET_KEY}"
 aws_key_path = "~/.ssh/bosh.pem"
 aws_key_name = "bosh"
 aws_region = "us-east-1"
