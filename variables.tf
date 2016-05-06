@@ -12,7 +12,7 @@ variable "network" {
 }
 
 variable "offset" {
-  default = "0"
+  default = ""
 }
 
 variable "aws_vpc_id" {}
