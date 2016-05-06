@@ -1,6 +1,6 @@
 language: c
 before_install:
-- wget https://releases.hashicorp.com/terraform/0.5.3/terraform_0.5.3linux_amd64.zip
+- wget https://releases.hashicorp.com/terraform/0.5.3/terraform_0.5.3_linux_amd64.zip
   -O /tmp/terraform.zip
 - sudo unzip -d /usr/local/bin/ /tmp/terraform.zip
 script: make test
