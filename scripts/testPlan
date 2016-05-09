@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 exitcode=0
 TFILE=`mktemp -t terraform-aws-cf-net.XXX`
 GREEN="\e[1;34m"
