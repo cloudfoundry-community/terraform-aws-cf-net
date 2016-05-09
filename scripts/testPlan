@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 exitcode=0
 TFILE=`mktemp -t terraform-aws-cf-net.XXX`
 GREEN="\e[1;34m"
@@ -35,7 +33,7 @@ OUTPUT=$(TF_VAR_aws_access_key=${TRAVIS_aws_access_key} TF_VAR_aws_secret_key=${
 CLEANUP "$?" "$desc" "$OUTPUT"
 
 desc="Did the baseline terraform plan change?"
-terraform plan -var-file terraform.tfvars.example &> $TFILE
+TF_VAR_aws_access_key=${TRAVIS_aws_access_key} TF_VAR_aws_secret_key=${TRAVIS_aws_secret_key} TF_VAR_aws_internet_gateway_id="X" TF_VAR_aws_key_name="bosh" TF_VAR_aws_key_path="~/.ssh/bosh.pem" TF_VAR_aws_route_table_private_id="X" TF_VAR_aws_route_table_public_id="X" TF_VAR_aws_vpc_id="X" terraform plan &> $TFILE
 OUTPUT=$(diff test-fixtures/terraform.testplan $TFILE)
 CLEANUP "$?" "$desc" "$OUTPUT"
 

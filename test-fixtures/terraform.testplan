@@ -14,6 +14,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m    allocation_id:     "" => "<computed>"
     association_id:    "" => "<computed>"
     domain:            "" => "<computed>"
+    instance:          "" => "<computed>"
     network_interface: "" => "<computed>"
     private_ip:        "" => "<computed>"
     public_ip:         "" => "<computed>"
@@ -21,11 +22,12 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m
 [0m[32m+ aws_route_table.public
 [0m    route.#:                                    "" => "1"
-    route.2153853322.cidr_block:                "" => "0.0.0.0/0"
-    route.2153853322.gateway_id:                "" => "X"
-    route.2153853322.instance_id:               "" => ""
-    route.2153853322.network_interface_id:      "" => ""
-    route.2153853322.vpc_peering_connection_id: "" => ""
+    route.2586884343.cidr_block:                "" => "0.0.0.0/0"
+    route.2586884343.gateway_id:                "" => "X"
+    route.2586884343.instance_id:               "" => ""
+    route.2586884343.nat_gateway_id:            "" => ""
+    route.2586884343.network_interface_id:      "" => ""
+    route.2586884343.vpc_peering_connection_id: "" => ""
     vpc_id:                                     "" => "X"
 [0m
 [0m[32m+ aws_route_table_association.cfruntime-2a-private
@@ -113,15 +115,15 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
     ingress.3544538468.security_groups.#: "" => "0"
     ingress.3544538468.self:              "" => "1"
     ingress.3544538468.to_port:           "" => "65535"
-    name:                                 "" => "cf-0-X"
+    name:                                 "" => "cf--X"
     owner_id:                             "" => "<computed>"
     tags.#:                               "" => "1"
-    tags.Name:                            "" => "cf-0-X"
+    tags.Name:                            "" => "cf--X"
     vpc_id:                               "" => "X"
 [0m
 [0m[32m+ aws_subnet.cfruntime-2a
 [0m    availability_zone:       "" => "us-west-2a"
-    cidr_block:              "" => "10.10.03.0/24"
+    cidr_block:              "" => "10.10.3.0/24"
     map_public_ip_on_launch: "" => "0"
     tags.#:                  "" => "1"
     tags.Name:               "" => "cf1"
@@ -129,7 +131,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m
 [0m[32m+ aws_subnet.cfruntime-2b
 [0m    availability_zone:       "" => "us-west-2a"
-    cidr_block:              "" => "10.10.04.0/24"
+    cidr_block:              "" => "10.10.4.0/24"
     map_public_ip_on_launch: "" => "0"
     tags.#:                  "" => "1"
     tags.Name:               "" => "cf2"
@@ -137,7 +139,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m
 [0m[32m+ aws_subnet.docker
 [0m    availability_zone:       "" => "us-west-2a"
-    cidr_block:              "" => "10.10.05.0/24"
+    cidr_block:              "" => "10.10.5.0/24"
     map_public_ip_on_launch: "" => "0"
     tags.#:                  "" => "1"
     tags.Name:               "" => "docker"
@@ -145,7 +147,7 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m
 [0m[32m+ aws_subnet.lb
 [0m    availability_zone:       "" => "us-west-2a"
-    cidr_block:              "" => "10.10.02.0/24"
+    cidr_block:              "" => "10.10.2.0/24"
     map_public_ip_on_launch: "" => "0"
     tags.#:                  "" => "1"
     tags.Name:               "" => "lb"
@@ -153,10 +155,11 @@ Note: You didn't specify an "-out" parameter to save this plan, so when
 [0m
 [0m[32m+ aws_subnet.logsearch
 [0m    availability_zone:       "" => "us-west-2a"
-    cidr_block:              "" => "10.10.07.0/24"
+    cidr_block:              "" => "10.10.7.0/24"
     map_public_ip_on_launch: "" => "0"
     tags.#:                  "" => "1"
     tags.Name:               "" => "logsearch"
     vpc_id:                  "" => "X"
 [0m
 [0m
+[0m[1mPlan:[0m 13 to add, 0 to change, 0 to destroy.[0m
